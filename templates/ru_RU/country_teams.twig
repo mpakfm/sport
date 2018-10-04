@@ -1,0 +1,30 @@
+{% extends "layout_main.twig" %}
+
+{% block page %}
+
+<table class="table table-dark">
+	<caption>Championships</caption>
+	<thead>
+		<tr>
+			<th>#ID</th>
+			<th>Страна</th>
+			<th>Команда</th>
+			<th>Игр</th>
+			<th>Действия</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for line in Teams%}
+		<tr class="game-{{line.ID}}">
+			<td>{{line.ID}}</td>
+			<td><a href="/country/championship/{{line.COUNTRY_CODE}}">{{line.COUNTRY_NAME}}</a></td>
+			<td>{{line.NAME}}</td>
+			<td>{{line.GAMES}}</td>
+			<td><button type="button" class="btn btn-danger js-team-del" data-id="{{line.ID}}">Удалить</button></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}
+

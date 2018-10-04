@@ -1,0 +1,14 @@
+/* 
+    Created on : 10.08.2018, 11:33:51
+    Author     : mpakfm
+*/
+.js_tpl {display: none;}
+/*.js-var-list li { list-style-type: none;}*/
+.js-cmd-name i {
+	color: green;
+	font-size: 1.3em;
+}
+.analyzer-line {
+	margin-bottom: 10px;
+}
+

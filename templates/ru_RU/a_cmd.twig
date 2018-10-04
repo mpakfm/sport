@@ -1,0 +1,41 @@
+{% extends "layout_main.twig" %}
+
+{% block page %}
+
+	<div class="container-fluid analyzer-line">
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="js-champ-selector">Выбрать Чемпионат: </label>
+				<select id="js-champ-selector">
+					{% for line in Championship%}
+						<option value="{{line.ID}}">{{line.COUNTRY}} - {{line.NAME}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label for="cmd1">Команда: </label>
+				<input type="text" id="cmd1" class="" style="width: 90%;" />
+			</div>
+			<div class="col-sm-4">
+				<input type="button" id="js-search-teams" class="btn btn-success" value="Найти" />
+			</div>
+			
+		</div>
+	</div>
+				
+	<div id="js-search-result" class="container-fluid analyzer-line" style="display: none;">
+		<p class="js_tpl">
+			<input type="radio"/><label></label>
+		</p>
+		<div class="row">
+			<div class="col-sm-4">
+				<div id="js-left-list"></div>
+			</div>
+			<div class="col-sm-4">
+				<input type="button" id="js-select-teams" class="btn btn-success" value="Выбрать" />
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{
+    "name": "mpakfm/sport",
+    "description": "statistic and calculate",
+    "type": "project",
+    "authors": [
+        {
+            "name": "mpakfm",
+            "email": "mpakfm@gmail.com"
+        }
+    ],
+    "require": {
+        "components/bootstrap": "^4.1",
+        "components/font-awesome": "^5.0",
+        "components/jquery": "^3.3",
+        "datatables/datatables": "^1.10",
+        "drmonty/datatables-responsive": "^2.2",
+        "mpakfm/printu": "dev-master",
+        "twig/twig": "^2.4",
+        "twig/extensions": "^1.5"
+    }
+}

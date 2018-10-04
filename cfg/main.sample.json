@@ -1,0 +1,42 @@
+{
+	"name": "MPCMS",
+	"version": "0.1",
+	"site":{
+		"meta": {
+			"title":"MPCMS",
+			"description":"MPCMS - Простая CMS для небольших сайтов с админ-панелью. Работает на PHP 7. Возможно подключение БД Mysql",
+			"keywords":"MPCMS, mpcms, CMS, ЦМС, php-cms, simple-cms, просто-цмс"
+		},
+		"lang":"ru"
+	},
+	"admin":{
+		"user":"admin",
+		"password":""
+	},
+	"route": {
+		"/":{"Index":"Index"},
+		"admin":{
+			"Admin":{
+				"/":{"Index":"Index"},
+				"Users":{
+					"/":{"User":"List"}
+				}
+			}
+		}
+	},
+	"db": {
+		"host": "localhost",
+		"database": "mpcms",
+		"user": "root",
+		"password": "1111"
+	},
+	"i18n": {
+		"default_lang":"ru",
+		"lang_folder":"lang",
+		"lang_list": {
+			"0":"ru",
+			"1":"en"
+		}
+	},
+	"upload": "upload"
+}

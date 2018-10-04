@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="{{ SITE.lang }}"> <![endif]-->
+<!--[if gt IE 8]>
+<!--><html class="no-js" lang="{{ SITE.lang }}"><!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="{{ SITE.meta.description }}" />
+<meta name="keywords" content="{{ SITE.meta.keywords }}" />
+<meta name="author" content="mpakfm" />
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<![endif]-->
+<title>{{ SITE.meta_title }}{% if page.title %} - {{page.title}}{% endif %}</title>
+<!-- Font
+================================================== -->
+<link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<!-- CSS
+================================================== -->
+<!--<link rel="stylesheet" href="/assets/css/base.css"/>
+<link rel="stylesheet" href="/assets/css/skeleton.css"/>
+<link rel="stylesheet" href="/assets/css/layout.css"/>-->
+<!--<link rel="stylesheet" href="/vendor/components/bootstrap/css/bootstrap.css"/>-->
+<link rel="stylesheet" href="/vendor/components/font-awesome/css/fontawesome-all.css" />
+<!--<link rel="stylesheet" href="/assets/css/retina.css"/>-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/css/site.css"/>
+
+<!-- JAVASCRIPT
+================================================== -->
+<!--<script src="/vendor/components/jquery/jquery.min.js"></script>
+<script src="/vendor/components/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/components/bootstrap/js/validator.js"></script>--->
+<!--<script type="text/javascript" src="/assets/js/retina-1.1.0.min.js"></script>-->
+
+</head>
+
+<body>
+	<div class="container">
+	
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Sport</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-main">
+				<ul class="nav navbar-nav">
+					<li><a href="/championships">Чемпионаты</a></li>
+					<li><a href="/analizer">Анализатор-Пара</a></li>
+					<li><a href="/analizer/cmd">Анализатор-Команда</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+		
+	
+	
+	<h1>{{ page.title }}</h1>
+
+	{% block page %}
+
+	{% endblock %}
+	
+	{% block page_script %}
+
+	{% endblock %}
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="/assets/js/site.js"></script>
+</body>
+
+</html>

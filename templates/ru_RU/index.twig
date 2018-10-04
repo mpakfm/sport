@@ -1,0 +1,27 @@
+{% extends "layout_main.twig" %}
+
+{% block page %}
+
+<table class="table table-dark">
+	<caption>Страны</caption>
+	<thead>
+		<tr>
+			<th>#ID</th>
+			<th>Страна</th>
+			<th style="text-align: center;">Чемпионатов</th>
+			<th style="text-align: center;">Команд</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for line in Countries%}
+		<tr>
+			<td>{{line.ID}}</td>
+			<td><a href="/country/championship/{{line.CODE}}">{{line.NAME}} ({{line.CODE}})</a></td>
+			<td style="text-align: center;">{{line.CNT_CH}}</td>
+			<td style="text-align: center;"><a href="/country/teams/{{line.CODE}}">{{line.CNT_TEAM}}</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout_main.twig" %}
+
+{% block page %}
+
+<table class="table table-dark">
+	<caption>Championships</caption>
+	<thead>
+		<tr>
+			<th>#ID</th>
+			<th>Чемпионат</th>
+			<th>Сезонов</th>
+			<th>Парсер</th>
+			<th>Проверка сезонов</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for line in ChampionshipYear%}
+		<tr>
+			<td>{{line.ID}}</td>
+			<td><a href="/country/championship/{{line.COUNTRY_CODE}}/{{line.ID}}">{{line.NAME}}</a></td>
+			<td>{{line.SEASONS}}</td>
+			<td>{{line.PARSER_NAME}}</td>
+			<td>
+				{% if line.PARSER_ID %}
+				<button class="btn btn-info js-parser-btn" data-parser="{{line.PARSER_ID}}" data-action="season" data-code="{{line.OUTER_CODE}}" data-country="{{line.COUNTRY_ID}}" />Сезоны</button>
+				{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+	
+<!-- Modal -->
+<div class="modal fade" id="parserResponse" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="parserResponseLongTitle">Ответ парсера</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

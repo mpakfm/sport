@@ -1,0 +1,28 @@
+{% extends "layout_main.twig" %}
+
+{% block page %}
+
+<table class="table table-dark">
+	<caption>{{caption}}</caption>
+	<thead>
+		<tr>
+			<th>#ID</th>
+			<th>Игра</th>
+			<th>Счет</th>
+			<th>Дата</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for line in ChampionshipYear%}
+		<tr>
+			<td>{{line.ID}}</td>
+			<td>{{line.GAME}}</td>
+			<td>{{line.SCORES}}</td>
+			<td>{{line.DATE}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}
+

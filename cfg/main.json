@@ -1,0 +1,45 @@
+{
+	"name": "Sport",
+	"version": "1.0",
+	"site":{
+		"meta": {
+			"title":"Sport",
+			"description":"Спортивная статистика",
+			"keywords":"Спортивная статистика, спорт"
+		},
+		"lang":"ru",
+		"copyright":"Copyright 2018 MPAKFM"
+	},
+	"admin":{
+		"user":"admin",
+		"password":""
+	},
+	
+	"route": {
+		"/":{"Index":"Index"},
+		"championships":{"Championships":"Index"},
+		"admin":{
+			"Admin":{
+				"/":{"Index":"Index"},
+				"Users":{
+					"/":{"User":"List"}
+				}
+			}
+		}
+	},
+	"db": {
+		"host": "localhost",
+		"database": "logistic",
+		"user": "root",
+		"password": "1111"
+	},
+	"i18n": {
+		"default_lang":"ru",
+		"lang_folder":"lang",
+		"lang_list": {
+			"0":"ru",
+			"1":"en"
+		}
+	},
+	"upload": "upload"
+}

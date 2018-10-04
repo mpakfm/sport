@@ -1,0 +1,149 @@
+{% extends "layout_main.twig" %}
+
+{% block page %}
+
+<table class="table table-dark">
+	<caption>Championships</caption>
+	<thead>
+		<tr>
+			<th>#ID</th>
+			<th>Страна</th>
+			<th>Чемпионат</th>
+			<th>Год</th>
+			<th>Парсер</th>
+			<th>Команды</th>
+			<th>Игры</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for line in ChampionshipYear%}
+		<tr>
+			<td>{{line.ID}}</td>
+			<td><a href="/country/championship/{{line.COUNTRY_CODE}}">{{line.COUNTRY}}</a></td>
+			<td>{{line.NAME}}</td>
+			<td><a href="/championship/{{line.ID}}">{{line.YEAR}}</a></td>
+			<td>{{line.PARSER}}</td>
+			<td>{{line.TEAMS}}</td>
+			<td>{{line.GAMES}}</td>
+			<td>
+				{% if line.PARSER_ID %}
+				<button class="btn btn-info js-parser-btn" data-parser="{{line.PARSER_ID}}" data-action="cmd" data-code="{{line.P_CODE}}" data-chy="{{line.ID}}" />Команды</button>
+				<button class="btn btn-info js-parser-btn" data-parser="{{line.PARSER_ID}}" data-action="game" data-code="{{line.P_CODE}}" data-chy="{{line.ID}}" />Игры</button>
+				{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+	
+<!-- Modal -->
+<div class="modal fade" id="parserResponse" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="parserResponseLongTitle">Ответ парсера</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<div id="cmd_check_list" data-chy="">
+				<table class="table table-dark js-cmd-check">
+					<thead>
+						<tr>
+							<th>CODE</th>
+							<th>Название</th>
+							<th>Варианты</th>
+							<th>Записать как новую</th>
+							<th>Номер</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="js_tpl">
+							<td class="js-cmd-code"></td>
+							<td class="js-cmd-name"></td>
+							<td class="js-cmd-var">
+								<div class="js-var-list">
+								<ul class="list-unstyled">
+									<li class="js_tpl">
+										<input type="radio" class="js-var-radio" /><span class="js-var-name"></span>
+									</li>
+								</ul>
+								</div>
+								<div class="js-var-choice">
+									<p>Выберите из списка команд</p>
+									<select class="js-ctr-cmd-list">
+										<option value="0">-- выбрать --</option>
+									</select>
+								</div>
+							</td>
+							<td class="js-cmd-newname"><input type="text" /></td>
+							<td class="js-cmd-number"><input type="text" style="width: 40px;" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<div class="response"></div>
+				<button type="button" class="btn btn-success js-cmd-save">Сохранить</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="parserGameResponse" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="parserGameResponseLongTitle">Ответ парсера</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<div id="cmd_game_list">
+				<table class="table table-dark js-game-check">
+					<thead>
+						<tr>
+							<th>№№</th>
+							<th>Дата</th>
+							<th>Команды</th>
+							<th>Счет</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="js_tpl">
+							<td class="js-gm-num"></td>
+							<td class="js-gm-date"></td>
+							<td class="js-gm-teams"></td>
+							<td class="js-gm-score"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var CountryTeams = [];
+	{% for line in CountryTeams %}
+		CountryTeams.push({
+			id: '{{line.ID}}',
+			name: '{{line.NAME}}',
+			original: '{{line.ORIGINAL_NAME}}',
+			code: '{{line.CODE}}'
+		});
+	{% endfor %}
+	//console.log(CountryTeams);
+</script>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout_main.twig" %}
+
+{% block page %}
+
+	<div class="container-fluid analyzer-line">
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="js-champ-selector">Выбрать Чемпионат: </label>
+				<select id="js-champ-selector">
+					{% for line in Championship%}
+						<option value="{{line.ID}}">{{line.COUNTRY}} - {{line.NAME}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			
+		</div>
+	</div>
+	<div class="container-fluid analyzer-line">
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="cmd1">Первая команда: </label>
+				<input type="text" id="cmd1" class="" />
+			</div>
+			<div class="col-sm-4">
+				<label for="cmd2">Вторая команда: </label>
+				<input type="text" id="cmd2" class="" />
+			</div>
+			<div class="col-sm-4">
+				<input type="button" id="js-search-teams" class="btn btn-success" value="Найти" />
+			</div>
+		</div>
+	</div>
+				
+	<div id="js-search-result" class="container-fluid analyzer-line" style="display: none;">
+		<p class="js_tpl">
+			<input type="radio"/><label></label>
+		</p>
+		<div class="row">
+			<div class="col-sm-4">
+				<div id="js-left-list"></div>
+			</div>
+			<div class="col-sm-4">
+				<div id="js-right-list"></div>
+			</div>
+			<div class="col-sm-4">
+				<input type="button" id="js-select-teams" class="btn btn-success" value="Выбрать" />
+			</div>
+		</div>
+	</div>
+	
+	<table class="table table-dark">
+	<caption>Игры</caption>
+	<thead>
+		<tr>
+			<th>#ID</th>
+			<th>Игра</th>
+			<th>Дата</th>
+			<th>Счет</th>
+			<th>Баланс</th>
+			<th>Исключить</th>
+		</tr>
+	</thead>
+	<tbody id="pair-list">
+		<tr class="js_tpl">
+			<td class="js-gid"></td>
+			<td class="js-gname"></td>
+			<td class="js-gdate"></td>
+			<td class="js-gscore"></td>
+			<td class="js-gb"></td>
+			<td class="js-gi"><input type="checkbox" name="game-exclude" value="" /></td>
+		</tr>
+	</tbody>
+</table>
+	
+
+{% endblock %}
+
