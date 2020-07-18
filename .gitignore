@@ -1,0 +1,7 @@
+.idea
+/mpakfm/*
+/upload/*
+/vendor/*
+/inplaysd/cookie.txt
+/inplaysd/cron.log
+/inplaysd/games
