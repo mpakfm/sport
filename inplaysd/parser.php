@@ -9,9 +9,7 @@ define("EMAIL_ADMIN", "mpakfm@gmail.com");
 define("EMAIL", "fsg79@yandex.ru");
 
 $emailList = [
-    'info@mpakfm.com',
-    'nvhgv56gfc@mail.ru',
-    'fsg79@yandex.ru',
+    'bigbic@mail.ru',
     'mpakfm@gmail.com',
 ];
 
